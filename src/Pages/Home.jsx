@@ -2,16 +2,16 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
-const Products = () => {
+const Home = () => {
 
     const navigate = useNavigate()
 
     return (
         <div>
-            <h1>Products</h1>
-            <button onClick={() => navigate("/")}>Home</button>
+            <h1>Home</h1>
+            <button onClick={() => navigate("/Products")}>Products</button>
         </div>
     )
 }
 
-export default Products
+export default Home
