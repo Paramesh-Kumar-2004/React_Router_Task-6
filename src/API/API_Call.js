@@ -15,6 +15,11 @@ async function getProducts() {
     return response.data
 }
 
+async function getSingleProduct(id) {
+    const response = await api.get(`/users/${id}`)
+    return response.data
+}
+
 async function updateProduct(id, data) {
     const response = await api.put(`/users/${id}`, data)
     return response
@@ -25,4 +30,4 @@ async function deleteProduct(id) {
     return response.data
 }
 
-export { createProduct, getProducts, updateProduct, deleteProduct };
+export { createProduct, getProducts, updateProduct, deleteProduct, getSingleProduct };
