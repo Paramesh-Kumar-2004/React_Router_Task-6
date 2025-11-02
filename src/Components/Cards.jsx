@@ -1,8 +1,23 @@
 import React from 'react'
+import ProfileCard from './ProfileCard'
 
-const Cards = () => {
+
+const Cards = ({ item }) => {
     return (
-        <div>Cards</div>
+        <div>
+            <ProfileCard
+                name={item.title}
+                title="Software Engineer"
+                // handle="javicodes"
+                // status="Online"
+                contactText={price}
+                avatarUrl={imageURL}
+                showUserInfo={true}
+                enableTilt={true}
+                enableMobileTilt={false}
+                onContactClick={() => console.log('Contact clicked')}
+            />
+        </div>
     )
 }
 

@@ -9,6 +9,7 @@ import CreateProducts from './Pages/CreateProducts'
 
 import "./index.css"
 import Cart from './Pages/Cart'
+import ImageURLs from './Components/ImageURLs'
 
 
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/CreateProducts' element={<CreateProducts />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/ImageURLs' element={<ImageURLs />} />
 
           <Route path='*' element={<PageNotFound />} />
 

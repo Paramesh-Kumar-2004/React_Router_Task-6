@@ -34,7 +34,8 @@
     text-shadow: 0 0 14px green;
 }
 
-input {
+input,
+textarea {
     background: rgba(0, 0, 0, 0.3) !important;
     color: greenyellow !important;
 }

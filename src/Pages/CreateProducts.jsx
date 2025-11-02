@@ -11,10 +11,10 @@ function CreateProducts() {
     const navigate = useNavigate()
 
     const [data, setData] = useState({
-        name: "",
-        nickname: "",
-        village: "",
-        orgin: ""
+        productTitle: "Zenitsu T-Shirt",
+        productImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4a01dtZRbrQoAZVkVq6-ArebBX3OBWYKkGQ&s",
+        price: "2004",
+        description: "The Strongest Character In Demons Slayer With First Form Alone"
     })
 
     function handleOnChange(e) {
@@ -30,12 +30,12 @@ function CreateProducts() {
         e.preventDefault()
         try {
             const result = await createProduct(data)
-            alert(result.message)
+            console.log(result)
             setData({
-                name: "",
-                nickname: "",
-                village: "",
-                orgin: ""
+                productTitle: "",
+                productImage: "",
+                price: "",
+                description: ""
             })
         } catch (error) {
             console.log(error)
@@ -49,23 +49,23 @@ function CreateProducts() {
 
             <form onSubmit={HandleSubmit} id='form'>
                 <div id="Name" className="DivGroup">
-                    <label className="label">Name :</label><br />
+                    <label className="label">Title :</label><br />
                     <input
                         type="text"
                         name="name"
                         placeholder="Enter Your Name"
-                        value={data.name}
+                        value={data.productTitle}
                         onChange={(e) => { handleOnChange(e) }}
                         required
                     />
                 </div>
 
                 <div className="DivGroup">
-                    <label className='label'>Nick Name : </label><br />
+                    <label className='label'>Image : </label><br />
                     <input
                         type="text"
                         name='nickname'
-                        value={data.nickname}
+                        value={data.productImage}
                         placeholder='Enter The Nick Name'
                         onChange={(e) => { handleOnChange(e) }}
                         required
@@ -73,11 +73,11 @@ function CreateProducts() {
                 </div>
 
                 <div className="DivGroup">
-                    <label className='label'>Village : </label><br />
+                    <label className='label'>Price : </label><br />
                     <input
                         type="text"
                         name='village'
-                        value={data.village}
+                        value={data.price}
                         placeholder='Enter The Village'
                         onChange={(e) => { handleOnChange(e) }}
                         required
@@ -85,11 +85,11 @@ function CreateProducts() {
                 </div>
 
                 <div className="DivGroup">
-                    <label className='label'>Orgin : </label><br />
-                    <input
+                    <label className='label'>Description : </label><br />
+                    <textarea
                         type="text"
                         name='orgin'
-                        value={data.orgin}
+                        value={data.description}
                         placeholder='Enter The Orgin'
                         onChange={(e) => { handleOnChange(e) }}
                         required
