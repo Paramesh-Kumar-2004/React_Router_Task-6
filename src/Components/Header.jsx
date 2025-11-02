@@ -15,8 +15,10 @@ const Header = ({ CartProductsCount }) => {
         <div id='HeaderDiv'>
 
             <div id='MainLogo'>
-                <img src={Logo} alt="Logo" width={26} />
-                <h1>VP</h1>
+                <a href="https://github.com/Paramesh-Kumar-2004" target='b'>
+                    <img src={Logo} alt="Logo" width={26} />
+                </a>
+                <h1 onClick={() => navigate("/")}>VP</h1>
             </div>
 
             <div id='CartDiv'>
