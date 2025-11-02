@@ -1,0 +1,47 @@
+#HeaderDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+}
+
+#MainLogo {
+    display: flex;
+    gap: 14px;
+}
+
+#CartDiv {
+    position: relative;
+    display: flex;
+    gap: 2px;
+}
+
+#CartLogo {
+    min-height: 45px;
+    min-width: 45px;
+    border-radius: 14px;
+    padding: 14px;
+    font-size: 14px;
+    color: white;
+    font-weight: bolder;
+    font-style: italic;
+    background: #2D3146;
+    cursor: pointer;
+    border: none;
+    background: url("../assets/Cart.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+#CartLogo:hover {
+    scale: 1.1;
+    transition: 126ms all ease-in-out;
+}
+
+.CartCount {
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    color: cyan;
+}

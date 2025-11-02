@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { createProduct } from '../API/API_Call';
 import "../Styles/CreateProducts.css"
@@ -7,6 +7,8 @@ import "../Styles/CreateProducts.css"
 
 
 function CreateProducts() {
+
+    const navigate = useNavigate()
 
     const [data, setData] = useState({
         name: "",
@@ -44,12 +46,6 @@ function CreateProducts() {
     return (
 
         <div id='CreateProduct'>
-
-            <div
-                style={{ display: "flex", justifyContent: "end" }}
-            >
-                <Link to={"/"} ><button id='HomeBtn'>Home</button></Link>
-            </div>
 
             <form onSubmit={HandleSubmit} id='form'>
                 <div id="Name" className="DivGroup">
@@ -100,7 +96,9 @@ function CreateProducts() {
                     />
                 </div>
                 <div id='Buttons'>
-                    <button type="submit" id='SubmitButton'>Create</button>
+                    <button type="submit" id='CreateSubmitButton'>Create</button>
+
+                    <button onClick={() => navigate("/")} id='HomeBtn'>Back</button>
                 </div>
 
             </form>
