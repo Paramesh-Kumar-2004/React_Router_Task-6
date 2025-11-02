@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
-import "../Styles/AddUser.css"
 import { createProduct } from '../API/API_Call';
+import "../Styles/CreateProducts.css"
 
 
 
-function AddProducts() {
+function CreateProducts() {
 
     const [data, setData] = useState({
         name: "",
@@ -109,4 +109,4 @@ function AddProducts() {
     )
 }
 
-export default AddProducts
+export default CreateProducts
