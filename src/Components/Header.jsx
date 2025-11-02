@@ -5,7 +5,7 @@ import { Navigate, useNavigate } from 'react-router-dom'
 
 
 
-const Header = () => {
+const Header = ({ CartProductsCount }) => {
 
     const navigate = useNavigate()
 
@@ -17,8 +17,9 @@ const Header = () => {
                 <h1>VP</h1>
             </div>
 
-            <div style={{ marginRight: 14 }}>
+            <div style={{ marginRight: 14, display: "flex", alignItems: "center", gap: 10 }}>
                 <button onClick={() => navigate("/cart")} id='SubmitButton' >Cart</button>
+                <p>{CartProductsCount}</p>
             </div>
 
 

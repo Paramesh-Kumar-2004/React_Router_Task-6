@@ -12,11 +12,11 @@ const Home = () => {
     return (
         <div>
 
-            <h1>Products</h1>
-
-            <div style={{ display: "flex", justifyContent: "end" }}>
+            <div>
                 <button onClick={() => navigate("/CreateProducts")} id="CreateButton">Create Product</button>
             </div>
+
+            <h1 style={{ color: "white" }}>Products</h1>
 
         </div>
     )
