@@ -1,0 +1,40 @@
+#CreateButton {
+    border-radius: 14px;
+    padding: 14px;
+    font-weight: bolder;
+    font-style: italic;
+    background-image: url("../assets/Itachi_3.jpg");
+    color: greenyellow;
+    background-size: cover;
+    border: 2px solid cyan;
+    cursor: pointer;
+}
+
+#deleteButton {
+    color: red;
+    text-shadow: 0 0 14px red;
+    cursor: pointer;
+}
+
+#deleteButton:hover {
+    scale: 1.2;
+    transition: all 0.5s ease-in-out;
+    text-shadow: 0 0 14px maroon;
+}
+
+#UpdateButton {
+    cursor: pointer;
+    text-decoration: none;
+    color: greenyellow;
+}
+
+#UpdateButton:hover {
+    scale: 1.2;
+    transition: all 0.5s ease-in-out;
+    text-shadow: 0 0 14px green;
+}
+
+input {
+    background: rgba(0, 0, 0, 0.3) !important;
+    color: greenyellow !important;
+}

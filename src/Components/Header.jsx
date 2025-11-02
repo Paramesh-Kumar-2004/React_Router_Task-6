@@ -1,8 +1,29 @@
 import React from 'react'
+import Logo from "../../public/VP.jpg"
+import "../Styles/Header.css"
+import { Navigate, useNavigate } from 'react-router-dom'
+
+
 
 const Header = () => {
+
+    const navigate = useNavigate()
+
     return (
-        <h1>Header</h1>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+
+            <div style={{ display: "flex", gap: 14, color: "white", alignItems: "center" }}>
+                <img src={Logo} alt="Logo" width={26} />
+                <h1>VP</h1>
+            </div>
+
+            <div style={{ marginRight: 14 }}>
+                <button onClick={() => navigate("/cart")} id='SubmitButton' >Cart</button>
+            </div>
+
+
+
+        </div >
     )
 }
 
