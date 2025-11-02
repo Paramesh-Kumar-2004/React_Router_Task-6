@@ -1,8 +1,12 @@
 import React from 'react'
 
+
+
 const Footer = () => {
     return (
-        <h1>Footer</h1>
+        <>
+            <a href="#">If You Want - Get Image URL Here. Only For Testing...</a>
+        </>
     )
 }
 

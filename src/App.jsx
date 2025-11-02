@@ -31,7 +31,9 @@ const App = () => {
 
         </Routes>
 
-        <Footer />
+        <div style={{ position: 'absolute', bottom: 24, textAlign: "center", width: "100%" }}>
+          <Footer />
+        </div>
 
       </div>
 
