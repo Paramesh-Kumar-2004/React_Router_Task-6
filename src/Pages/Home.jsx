@@ -29,7 +29,7 @@ const Home = ({ HandleAdCart, cartItem }) => {
         try {
             const response = await getProducts()
             setProducts(response)
-            setLoading(!loading)
+            setLoading(false)
         }
         catch (error) {
             console.log(error)
@@ -40,7 +40,7 @@ const Home = ({ HandleAdCart, cartItem }) => {
         try {
             const response = await deleteProduct(data.id)
             setDeleteProductData(response)
-            setLoading(!loading)
+            setLoading(false)
         } catch (error) {
             console.log(error)
         }
