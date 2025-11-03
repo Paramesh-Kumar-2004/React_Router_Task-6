@@ -15,6 +15,7 @@ import "./index.css"
 const App = () => {
 
   const [cartProductsCount, setCartProductsCount] = useState(0)
+  const [cartItem, setCartItems] = useState([])
 
   return (
     <BrowserRouter>

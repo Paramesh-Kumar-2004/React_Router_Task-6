@@ -10,7 +10,12 @@ import Cards from '../Components/Cards'
 const Home = () => {
 
     const navigate = useNavigate()
-    const [products, setProducts] = useState([])
+    // const [products, setProducts] = useState([])
+    const [products2, setProducts2] = useState([
+        { title: "1", image: "NO", price: 2004 },
+        { title: "2", image: "NO", price: 2004 },
+        { title: "3", image: "NO", price: 2004 },
+    ])
 
     useEffect(() => {
         // fetchProducts()
@@ -36,10 +41,7 @@ const Home = () => {
 
             <h1 style={{ color: "white" }}>Products</h1>
 
-            {/* {products.map((item) => { */}
-            <Cards item={item} />
-            {/* }) */}
-            {/* } */}
+            <Cards items={products2} />
 
         </div>
     )
