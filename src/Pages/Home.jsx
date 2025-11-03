@@ -12,6 +12,9 @@ import img2 from "../assets/Akatsuki_Members_11.jpg"
 const Home = ({ HandleAdCart, cartItem }) => {
 
     const navigate = useNavigate()
+
+    const [loading, setLoading] = useState(true)
+    
     const [products, setProducts] = useState([])
 
     useEffect(() => {
