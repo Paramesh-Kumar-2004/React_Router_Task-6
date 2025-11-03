@@ -33,11 +33,24 @@ const Cart = ({ cartItem }) => {
         }
     };
 
+    products.map((ele) => {
+        console.log(ele.id)
+    })
 
     return (
         <div>
             {products.length <= 0 && (
                 <h1>No Cart Data</h1>
+            )}
+
+            {products.length > 0 && (
+                products.map((ele) => {
+                    return (
+                        <div key={ele.id}>
+                            <h2>{ele.id}</h2>
+                        </div>
+                    )
+                })
             )}
 
         </div>
