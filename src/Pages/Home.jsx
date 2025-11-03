@@ -13,7 +13,7 @@ const Home = () => {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
-        fetchProducts()
+        // fetchProducts()
     }, [])
 
     const fetchProducts = async () => {
@@ -36,10 +36,10 @@ const Home = () => {
 
             <h1 style={{ color: "white" }}>Products</h1>
 
-            {products.map((item) => {
-                <Cards item={item} />
-            })
-            }
+            {/* {products.map((item) => { */}
+            <Cards item={item} />
+            {/* }) */}
+            {/* } */}
 
         </div>
     )

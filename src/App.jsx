@@ -6,10 +6,10 @@ import AddProducts from './Pages/CreateProducts'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import CreateProducts from './Pages/CreateProducts'
-
-import "./index.css"
 import Cart from './Pages/Cart'
 import ImageURLs from './Components/ImageURLs'
+
+import "./index.css"
 
 
 const App = () => {
@@ -33,7 +33,7 @@ const App = () => {
 
         </Routes>
 
-        <div style={{ position: 'absolute', bottom: 24, textAlign: "center", width: "100%" }}>
+        <div style={{ textAlign: "center", width: "100%" }}>
           <Footer />
         </div>
 
