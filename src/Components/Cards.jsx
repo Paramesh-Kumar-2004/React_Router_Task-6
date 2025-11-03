@@ -1,25 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Styles/Card.css";
 
 
 
-const Cards = ({ items }) => {
+const Cards = ({ items, HandleAdCart, cartItem }) => {
 
-    console.log(items)
 
     return (
         <div id="MainCard">
             {items.map((item) => {
                 return (
-                    <div class="post-card">
+                    <div className="post-card" key={item.id}>
 
-                        <div class="avatar">
+                        <div className="avatar">
                             <img src={item.productImage} alt={item.productTitle} />
                         </div>
 
-                        <h2 class="title">{item.productTitle} </h2>
+                        <h2 className="title">{item.productTitle} </h2>
 
-                        <div class="image-preview">
+                        <div className="image-preview">
                             <img src={item.productImage} alt={item.productTitle} />
                         </div>
 
@@ -28,7 +27,9 @@ const Cards = ({ items }) => {
                                 <h2>&#8377; {item.price}</h2>
                             </div>
                             <div className="btn">
-                                <button>Add To Cart</button>
+                                <button value={!cartItem.includes(item.id) ? "Add To Cart" : "Remove From Cart"} onClick={(e) => { HandleAdCart(e, item) }}>
+                                    {!cartItem.includes(item.id) ? "Add To Cart" : "Remove From Cart"}
+                                </button>
                             </div>
                         </div>
 

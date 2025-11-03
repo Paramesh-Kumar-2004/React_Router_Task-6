@@ -9,7 +9,7 @@ import img2 from "../assets/Akatsuki_Members_11.jpg"
 
 
 
-const Home = () => {
+const Home = ({ HandleAdCart, cartItem }) => {
 
     const navigate = useNavigate()
     const [products, setProducts] = useState([])
@@ -39,7 +39,7 @@ const Home = () => {
             <h1 style={{ color: "white" }}>Products</h1>
 
 
-            <Cards items={products} />
+            <Cards items={products} HandleAdCart={HandleAdCart} cartItem={cartItem} />
 
 
         </div>

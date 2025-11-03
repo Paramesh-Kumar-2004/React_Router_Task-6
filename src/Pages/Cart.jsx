@@ -1,9 +1,13 @@
 import React from 'react'
 
-const Cart = () => {
+const Cart = ({ cartItem }) => {
     return (
         <div>
-            <h1>Cart</h1>
+            {cartItem.map((ele) => {
+                return (
+                    <p key={ele.id}>{ele.id}</p>
+                )
+            })}
         </div>
     )
 }
