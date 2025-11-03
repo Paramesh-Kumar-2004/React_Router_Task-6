@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import "../Styles/Home.css"
 import { getProducts } from '../API/API_Call'
 import Cards from '../Components/Cards'
+import img from "../assets/Obito_5.jpg"
+import img2 from "../assets/Akatsuki_Members_11.jpg"
 
 
 
@@ -12,9 +14,11 @@ const Home = () => {
     const navigate = useNavigate()
     // const [products, setProducts] = useState([])
     const [products2, setProducts2] = useState([
-        { title: "1", image: "NO", price: 2004 },
-        { title: "2", image: "NO", price: 2004 },
-        { title: "3", image: "NO", price: 2004 },
+        { title: "1", image: img2, price: 2004 },
+        { title: "2", image: img2, price: 2004 },
+        { title: "3", image: img2, price: 2004 },
+        { title: "4", image: img2, price: 2004 },
+        { title: "4", image: img2, price: 2004 },
     ])
 
     useEffect(() => {

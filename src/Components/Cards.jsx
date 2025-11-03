@@ -8,36 +8,38 @@ const Cards = ({ items }) => {
     console.log(items)
 
     return (
-        <div className="product-card">
+        <div id="MainCard">
             {items.map((item) => {
                 return (
-                    <div>
-                        <a href="#">
-                            {/* <img className="product-image" src={item.image} alt={title} /> */}
-                            <img className="product-image" src={item.image} alt="No" />
-                        </a>
-
-                        <div className="product-content">
+                    <div className="product-card">
+                        <div>
                             <a href="#">
-                                <h5 className="product-title">{item.title}</h5>
+                                <img className="product-image" src={item.image} alt={item.title} />
                             </a>
 
-                            {/* <div className="product-rating">
+                            <div className="product-content">
+                                <a href="#">
+                                    <h5 className="product-title">{item.title}</h5>
+                                </a>
+
+                                {/* <div className="product-rating">
                                 <div className="stars">{stars}</div>
                                 <span className="rating-badge">{rating.toFixed(1)}</span>
                             </div> */}
 
-                            <div className="product-footer">
-                                <span className="product-price">${item.price}</span>
-                                <button className="add-btn">
-                                    Add to cart
-                                </button>
+                                <div className="product-footer">
+                                    <span className="product-price">${item.price}</span>
+                                    <button className="add-btn">
+                                        Add to cart
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 )
             })}
         </div>
+
     );
 };
 
