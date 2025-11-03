@@ -11,30 +11,27 @@ const Cards = ({ items }) => {
         <div id="MainCard">
             {items.map((item) => {
                 return (
-                    <div className="product-card" key={item.id}>
-                        <div>
-                            <a href="#">
-                                <img className="product-image" src={item.productImage} alt={item.title} />
-                            </a>
+                    <div class="post-card">
 
-                            <div className="product-content">
-                                <a href="#">
-                                    <h5 className="product-title">{item.productTitle}</h5>
-                                </a>
+                        <div class="avatar">
+                            <img src={item.productImage} alt={item.productTitle} />
+                        </div>
 
-                                {/* <div className="product-rating">
-                                <div className="stars">{stars}</div>
-                                <span className="rating-badge">{rating.toFixed(1)}</span>
-                            </div> */}
+                        <h2 class="title">{item.productTitle} </h2>
 
-                                <div className="product-footer">
-                                    <span className="product-price">${item.price}</span>
-                                    <button className="add-btn">
-                                        Add to cart
-                                    </button>
-                                </div>
+                        <div class="image-preview">
+                            <img src={item.productImage} alt={item.productTitle} />
+                        </div>
+
+                        <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center", marginBottom: "14px" }}>
+                            <div className="price">
+                                <h2>&#8377; {item.price}</h2>
+                            </div>
+                            <div className="btn">
+                                <button>Add To Cart</button>
                             </div>
                         </div>
+
                     </div>
                 )
             })}
