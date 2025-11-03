@@ -1,6 +1,5 @@
 .loader-section {
     padding: 80px 0;
-    background-color: #ffffff;
 }
 
 .dark .loader-section {
@@ -30,6 +29,7 @@
     margin-top: 12px;
     font-size: 1.1rem;
     color: #374151;
+    color: #e5e7eb;
     font-weight: 500;
 }
 
