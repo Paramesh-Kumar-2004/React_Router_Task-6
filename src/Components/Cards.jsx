@@ -11,15 +11,15 @@ const Cards = ({ items }) => {
         <div id="MainCard">
             {items.map((item) => {
                 return (
-                    <div className="product-card">
+                    <div className="product-card" key={item.id}>
                         <div>
                             <a href="#">
-                                <img className="product-image" src={item.image} alt={item.title} />
+                                <img className="product-image" src={item.productImage} alt={item.title} />
                             </a>
 
                             <div className="product-content">
                                 <a href="#">
-                                    <h5 className="product-title">{item.title}</h5>
+                                    <h5 className="product-title">{item.productTitle}</h5>
                                 </a>
 
                                 {/* <div className="product-rating">

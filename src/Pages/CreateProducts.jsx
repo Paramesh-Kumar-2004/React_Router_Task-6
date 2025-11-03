@@ -11,10 +11,10 @@ function CreateProducts() {
     const navigate = useNavigate()
 
     const [data, setData] = useState({
-        productTitle: "Zenitsu T-Shirt",
-        productImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4a01dtZRbrQoAZVkVq6-ArebBX3OBWYKkGQ&s",
-        price: "2004",
-        description: "The Strongest Character In Demons Slayer With First Form Alone"
+        productTitle: "",
+        productImage: "",
+        price: "",
+        description: ""
     })
 
     function handleOnChange(e) {
@@ -37,6 +37,7 @@ function CreateProducts() {
                 price: "",
                 description: ""
             })
+            navigate("/")
         } catch (error) {
             console.log(error)
         }
@@ -52,7 +53,7 @@ function CreateProducts() {
                     <label className="label">Title :</label><br />
                     <input
                         type="text"
-                        name="name"
+                        name="productTitle"
                         placeholder="Enter Your Name"
                         value={data.productTitle}
                         onChange={(e) => { handleOnChange(e) }}
@@ -64,7 +65,7 @@ function CreateProducts() {
                     <label className='label'>Image : </label><br />
                     <input
                         type="text"
-                        name='nickname'
+                        name='productImage'
                         value={data.productImage}
                         placeholder='Enter The Nick Name'
                         onChange={(e) => { handleOnChange(e) }}
@@ -76,7 +77,7 @@ function CreateProducts() {
                     <label className='label'>Price : </label><br />
                     <input
                         type="text"
-                        name='village'
+                        name='price'
                         value={data.price}
                         placeholder='Enter The Village'
                         onChange={(e) => { handleOnChange(e) }}
@@ -88,7 +89,7 @@ function CreateProducts() {
                     <label className='label'>Description : </label><br />
                     <textarea
                         type="text"
-                        name='orgin'
+                        name='description'
                         value={data.description}
                         placeholder='Enter The Orgin'
                         onChange={(e) => { handleOnChange(e) }}

@@ -12,24 +12,17 @@ import img2 from "../assets/Akatsuki_Members_11.jpg"
 const Home = () => {
 
     const navigate = useNavigate()
-    // const [products, setProducts] = useState([])
-    const [products2, setProducts2] = useState([
-        { title: "1", image: img2, price: 2004 },
-        { title: "2", image: img2, price: 2004 },
-        { title: "3", image: img2, price: 2004 },
-        { title: "4", image: img2, price: 2004 },
-        { title: "4", image: img2, price: 2004 },
-    ])
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
-        // fetchProducts()
+        fetchProducts()
     }, [])
+
 
     const fetchProducts = async () => {
         try {
             const response = await getProducts()
             setProducts(response)
-            console.log(response)
         }
         catch (error) {
             console.log(error)
@@ -45,7 +38,9 @@ const Home = () => {
 
             <h1 style={{ color: "white" }}>Products</h1>
 
-            <Cards items={products2} />
+
+            <Cards items={products} />
+
 
         </div>
     )
