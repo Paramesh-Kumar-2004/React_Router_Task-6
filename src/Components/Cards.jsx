@@ -3,7 +3,7 @@ import "../Styles/Card.css";
 
 
 
-const Cards = ({ items, HandleAdCart, cartItem }) => {
+const Cards = ({ items, HandleAdCart, cartItem, HandleDeleteBtn }) => {
 
 
     return (
@@ -12,24 +12,32 @@ const Cards = ({ items, HandleAdCart, cartItem }) => {
                 return (
                     <div className="post-card" key={item.id}>
 
-                        <div className="avatar">
-                            <img src={item.productImage} alt={item.productTitle} />
+
+                        <div className="avatarAndTitle">
+
+                            <div className="avatar">
+                                <img src={item.productImage} alt={item.productTitle} />
+                            </div>
+                            <div className="price">
+                                <h2>&#8377; {item.price}</h2>
+                            </div>
                         </div>
 
                         <h2 className="title">{item.productTitle} </h2>
+
 
                         <div className="image-preview">
                             <img src={item.productImage} alt={item.productTitle} />
                         </div>
 
-                        <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center", marginBottom: "14px" }}>
-                            <div className="price">
-                                <h2>&#8377; {item.price}</h2>
-                            </div>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "14px" }}>
                             <div className="btn">
                                 <button value={!cartItem.includes(item.id) ? "Add To Cart" : "Remove From Cart"} onClick={(e) => { HandleAdCart(e, item) }}>
                                     {!cartItem.includes(item.id) ? "Add To Cart" : "Remove From Cart"}
                                 </button>
+                            </div>
+                            <div className="delbtn">
+                                <button onClick={() => { HandleDeleteBtn(item) }}>Delete</button>
                             </div>
                         </div>
 

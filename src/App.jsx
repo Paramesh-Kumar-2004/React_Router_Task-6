@@ -32,7 +32,6 @@ const App = () => {
       }
     }
   }
-  console.log(cartItem)
 
 
   return (

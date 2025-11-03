@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import "../Styles/Home.css"
-import { getProducts } from '../API/API_Call'
+import { deleteProduct, getProducts } from '../API/API_Call'
 import Cards from '../Components/Cards'
 import img from "../assets/Obito_5.jpg"
 import img2 from "../assets/Akatsuki_Members_11.jpg"
@@ -18,10 +18,11 @@ const Home = ({ HandleAdCart, cartItem }) => {
     const [loadingMessage, setLoadingMessage] = useState("Loading...")
 
     const [products, setProducts] = useState([])
+    const [deleteProductData, setDeleteProductData] = useState([])
 
     useEffect(() => {
         fetchProducts()
-    }, [])
+    }, [deleteProductData])
 
 
     const fetchProducts = async () => {
@@ -35,6 +36,16 @@ const Home = ({ HandleAdCart, cartItem }) => {
         }
     }
 
+    const HandleDeleteBtn = async (data) => {
+        try {
+            const response = await deleteProduct(data.id)
+            setDeleteProductData(response)
+            setLoading(!loading)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     if (loading) {
         return (
             <div>
@@ -43,7 +54,6 @@ const Home = ({ HandleAdCart, cartItem }) => {
         )
     }
 
-
     return (
         <div>
 
@@ -51,7 +61,7 @@ const Home = ({ HandleAdCart, cartItem }) => {
                 <button onClick={() => navigate("/CreateProducts")} id="CreateButton">Create Product</button>
             </div>
 
-            <Cards items={products} HandleAdCart={HandleAdCart} cartItem={cartItem} />
+            <Cards items={products} HandleAdCart={HandleAdCart} cartItem={cartItem} HandleDeleteBtn={HandleDeleteBtn} />
 
         </div>
     )
