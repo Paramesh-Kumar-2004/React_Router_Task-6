@@ -57,10 +57,6 @@ const Home = ({ HandleAdCart, cartItem }) => {
     return (
         <div>
 
-            <div>
-                <button onClick={() => navigate("/CreateProducts")} id="CreateButton">Create Product</button>
-            </div>
-
             <Cards items={products} HandleAdCart={HandleAdCart} cartItem={cartItem} HandleDeleteBtn={HandleDeleteBtn} />
 
         </div>

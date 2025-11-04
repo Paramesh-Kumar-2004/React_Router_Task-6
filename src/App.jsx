@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home'
 import PageNotFound from './Pages/PageNotFound'
 import AddProducts from './Pages/CreateProducts'
@@ -37,13 +37,14 @@ const App = () => {
   };
 
 
-
-
   return (
     <BrowserRouter>
       <div id="MainApp">
 
         <Header CartProductsCount={cartProductsCount} />
+        {/* <div> */}
+        <Link to={"/CreateProducts"} id="CreateButton">Create Product</Link>
+        {/* </div> */}
 
         <Routes>
 
