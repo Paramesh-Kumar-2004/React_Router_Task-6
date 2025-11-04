@@ -5,6 +5,8 @@ import "../Styles/Card.css";
 
 const Cards = ({ items, HandleAdCart, cartItem, HandleDeleteBtn }) => {
 
+    console.log(cartItem);
+
 
     return (
         <div id="MainCard">
@@ -20,6 +22,7 @@ const Cards = ({ items, HandleAdCart, cartItem, HandleDeleteBtn }) => {
                             </div>
                             <div className="price">
                                 <h2>&#8377; {item.price}</h2>
+                                <h2>{item.id}</h2>
                             </div>
                         </div>
 
@@ -32,8 +35,8 @@ const Cards = ({ items, HandleAdCart, cartItem, HandleDeleteBtn }) => {
 
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "14px" }}>
                             <div className="btn">
-                                <button value={!cartItem.includes(item.id) ? "Add To Cart" : "Remove From Cart"} onClick={(e) => { HandleAdCart(e, item) }}>
-                                    {!cartItem.includes(item.id) ? "Add To Cart" : "Remove From Cart"}
+                                <button value={!cartItem.some(cart => cart.id === item.id) ? "Add To Cart" : "Remove From Cart"} onClick={(e) => { HandleAdCart(e, item) }}>
+                                    {!cartItem.some(cart => cart.id === item.id) ? "Add To Cart" : "Remove From Cart"}
                                 </button>
                             </div>
                             <div className="delbtn">

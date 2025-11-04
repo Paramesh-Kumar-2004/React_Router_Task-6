@@ -17,21 +17,19 @@ const App = () => {
   const [cartItem, setCartItems] = useState([])
   const [cartProductsCount, setCartProductsCount] = useState(0)
 
-  const HandleAdCart = async (e, data) => {
-    if (e.target.value === "Add To Cart") {
-      if (!cartItem.includes(data.id)) {
-        setCartItems((prev) => [...prev, data.id])
-        setCartProductsCount(cartProductsCount + 1)
-      }
+  const HandleAdCart = (e, data) => {
+    const isInCart = cartItem.some(item => item.id === data.id);
+
+    if (!isInCart) {
+      setCartItems(prev => [...prev, data]);
+      setCartProductsCount(prevCount => prevCount + 1);
     }
     else {
-      console.log(e.target.value)
-      if (cartItem.includes(data.id)) {
-        setCartItems((prev) => prev.filter((itemId) => itemId !== data.id));
-        setCartProductsCount((prevCount) => prevCount - 1);
-      }
+      setCartItems(prev => prev.filter(item => item.id !== data.id));
+      setCartProductsCount(prevCount => prevCount - 1);
     }
-  }
+  };
+
 
 
   return (

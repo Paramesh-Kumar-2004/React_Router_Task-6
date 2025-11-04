@@ -11,48 +11,68 @@ const Cart = ({ cartItem }) => {
 
     const [totalAmount, setTotalAmount] = useState(0)
     const [qty, setQty] = useState([])
-    const [products, setProducts] = useState([])
-
-    useEffect(() => {
-        fetchProducts()
-    }, [])
 
 
-    const fetchProducts = async () => {
-        try {
-            const response = await getProducts();
+    // useEffect(() => {
+    //     fetchProducts()
+    // }, [])
 
-            const filteredProducts = response.filter((product) =>
-                cartItem.includes(String(product.id))
-            );
 
-            setProducts(filteredProducts);
-            setLoading(false);
-        } catch (error) {
-            console.log(error);
-        }
-    };
+    // const fetchProducts = async () => {
+    //     try {
+    //         const response = await getProducts();
 
-    products.map((ele) => {
-        console.log(ele.id)
-    })
+    //         const filteredProducts = response.filter((product) =>
+    //             cartItem.includes(String(product.id))
+    //         );
+
+    //         setProducts(filteredProducts);
+    //         setLoading(false);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
+
 
     return (
-        <div>
-            {products.length <= 0 && (
-                <h1>No Cart Data</h1>
-            )}
+        <div id="MainCard">
+            {cartItem.map((item) => {
+                return (
+                    <div className="post-card" key={item.id}>
 
-            {products.length > 0 && (
-                products.map((ele) => {
-                    return (
-                        <div key={ele.id}>
-                            <h2>{ele.id}</h2>
+
+                        <div className="avatarAndTitle">
+
+                            <div className="avatar">
+                                <img src={item.productImage} alt={item.productTitle} />
+                            </div>
+                            <div className="price">
+                                <h2>&#8377; {item.price}</h2>
+                                <h2>{item.id}</h2>
+                            </div>
                         </div>
-                    )
-                })
-            )}
 
+                        <h2 className="title">{item.productTitle} </h2>
+
+
+                        <div className="image-preview">
+                            <img src={item.productImage} alt={item.productTitle} />
+                        </div>
+
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "14px" }}>
+                            <div className="btn">
+                                <button>
+                                    Add Quantity
+                                </button>
+                            </div>
+                            <div className="delbtn">
+                                <button onClick={() => { HandleDeleteBtn(item) }}>Delete</button>
+                            </div>
+                        </div>
+
+                    </div>
+                )
+            })}
         </div>
     )
 }
