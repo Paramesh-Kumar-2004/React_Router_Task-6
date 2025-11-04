@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Loader from '../Components/Loader';
 
 
 const Cart = ({ cartItem, handleDeleteBtn }) => {
@@ -36,53 +37,63 @@ const Cart = ({ cartItem, handleDeleteBtn }) => {
         setCartData(updated);
     };
 
+    if (totalAmount <= 0) {
+        return (
+            <Loader loadingMessage={"No Cart Data"} />
+        )
+    }
+
     return (
-        <div id="MainCard">
-            {cartData.map((item) => (
-                <div className="post-card" key={item.id}>
-                    <div className="avatarAndTitle">
-                        <div className="avatar">
-                            <img src={item.productImage} alt={item.productTitle} />
-                        </div>
-                        <div className="price">
-                            <h2>₹ {item.price}</h2>
-                        </div>
-                    </div>
+        <>
 
-                    <h2 className="title">{item.productTitle}</h2>
-
-                    <div className="image-preview">
-                        <img src={item.productImage} alt={item.productTitle} />
-                    </div>
-
-                    <div
-                        style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                            marginBottom: "14px",
-                        }}
-                    >
-                        <div className="btn">
-                            <button onClick={() => handleIncreaseQty(item.id)}>+</button>
-                            <span style={{ margin: "0 10px" }}>Qty: {item.qty}</span>
-                            <button onClick={() => handleDecreaseQty(item.id)}>-</button>
-                        </div>
-                        <div className="delbtn">
-                            <button onClick={() => handleDeleteBtn(item)}>Delete</button>
-                        </div>
-                    </div>
-
-                    <div style={{ marginTop: "10px" }}>
-                        <h3>Subtotal: ₹ {item.price * item.qty}</h3>
-                    </div>
-                </div>
-            ))}
-
-            <div style={{ marginTop: "20px", textAlign: "center" }}>
+            <div style={{ marginRight: "14px", textAlign: "end" }}>
                 <h2>Total Amount: ₹ {totalAmount}</h2>
             </div>
-        </div>
+
+            <div id="MainCard">
+                {cartData.map((item) => (
+                    <div className="post-card" key={item.id}>
+                        <div className="avatarAndTitle">
+                            <div className="avatar">
+                                <img src={item.productImage} alt={item.productTitle} />
+                            </div>
+                            <div className="price">
+                                <h2>₹ {item.price}</h2>
+                            </div>
+                        </div>
+
+                        <h2 className="title">{item.productTitle}</h2>
+
+                        <div className="image-preview">
+                            <img src={item.productImage} alt={item.productTitle} />
+                        </div>
+
+                        <div
+                            style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                                alignItems: "center",
+                                marginBottom: "14px",
+                            }}
+                        >
+                            <div className="btn">
+                                <button onClick={() => handleDecreaseQty(item.id)}>-</button>
+                                <span style={{ margin: "0 10px" }}>Qty: {item.qty}</span>
+                                <button onClick={() => handleIncreaseQty(item.id)}>+</button>
+                            </div>
+                            <div className="delbtn">
+                                <button onClick={() => handleDeleteBtn(item)}>Remove</button>
+                            </div>
+                        </div>
+
+                        <div style={{ marginTop: "10px" }}>
+                            <h3>Subtotal: ₹ {item.price * item.qty}</h3>
+                        </div>
+                    </div>
+                ))}
+
+            </div>
+        </>
     );
 };
 
