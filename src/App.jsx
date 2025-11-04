@@ -36,7 +36,6 @@ const App = () => {
     setCartProductsCount(pre => pre - 1)
   };
 
-
   return (
     <BrowserRouter>
       <div id="MainApp">
@@ -49,7 +48,6 @@ const App = () => {
         <Routes>
 
           <Route path='/' element={<Home HandleAdCart={HandleAdCart} cartItem={cartItem} />} />
-          <Route path='/React_Router_Task-6' element={<Home HandleAdCart={HandleAdCart} cartItem={cartItem} />} />
           <Route path='/CreateProducts' element={<CreateProducts />} />
           <Route path='/cart' element={<Cart cartItem={cartItem} handleDeleteBtn={handleDeleteBtn} />} />
           <Route path='/ImageURLs' element={<ImageURLs />} />
