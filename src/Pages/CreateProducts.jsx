@@ -50,7 +50,7 @@ function CreateProducts() {
 
             <form onSubmit={HandleSubmit} id='form'>
                 <div id="Name" className="DivGroup">
-                    <label className="label">Title :</label><br />
+                    <label className="label">Product Name :</label><br />
                     <input
                         type="text"
                         name="productTitle"

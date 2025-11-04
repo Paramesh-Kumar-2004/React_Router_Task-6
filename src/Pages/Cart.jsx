@@ -86,7 +86,8 @@ const Cart = ({ cartItem, handleDeleteBtn }) => {
                             </div>
                         </div>
 
-                        <div style={{ marginTop: "10px" }}>
+                        <p>{item.description}</p>
+                        <div style={{ marginTop: "10px", textAlign: "center" }}>
                             <h3>Subtotal: ₹ {item.price * item.qty}</h3>
                         </div>
                     </div>

@@ -16,7 +16,6 @@ const Cards = ({ items, HandleAdCart, cartItem, HandleDeleteBtn }) => {
 
 
                         <div className="avatarAndTitle">
-
                             <div className="avatar">
                                 <img src={item.productImage} alt={item.productTitle} />
                             </div>
@@ -25,8 +24,7 @@ const Cards = ({ items, HandleAdCart, cartItem, HandleDeleteBtn }) => {
                             </div>
                         </div>
 
-                        <h2 className="title">{item.productTitle} </h2>
-
+                        <a href={item.productImage} target="b" className="title">{item.productTitle} </a>
 
                         <div className="image-preview">
                             <img src={item.productImage} alt={item.productTitle} />
