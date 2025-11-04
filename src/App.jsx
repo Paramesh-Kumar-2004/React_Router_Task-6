@@ -30,6 +30,13 @@ const App = () => {
     }
   };
 
+  const handleDeleteBtn = (item) => {
+    const updatedCart = cartItem.filter(cartItem => cartItem.id !== item.id);
+    setCartItems(updatedCart);
+    setCartProductsCount(pre => pre - 1)
+  };
+
+
 
 
   return (
@@ -42,7 +49,7 @@ const App = () => {
 
           <Route path='/' element={<Home HandleAdCart={HandleAdCart} cartItem={cartItem} />} />
           <Route path='/CreateProducts' element={<CreateProducts />} />
-          <Route path='/cart' element={<Cart cartItem={cartItem} />} />
+          <Route path='/cart' element={<Cart cartItem={cartItem} handleDeleteBtn={handleDeleteBtn} />} />
           <Route path='/ImageURLs' element={<ImageURLs />} />
 
           <Route path='*' element={<PageNotFound />} />

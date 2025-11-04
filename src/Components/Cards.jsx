@@ -22,7 +22,6 @@ const Cards = ({ items, HandleAdCart, cartItem, HandleDeleteBtn }) => {
                             </div>
                             <div className="price">
                                 <h2>&#8377; {item.price}</h2>
-                                <h2>{item.id}</h2>
                             </div>
                         </div>
 
